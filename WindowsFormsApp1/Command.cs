@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace UDP_server
 {
@@ -22,7 +23,14 @@ namespace UDP_server
             string[] ArrayCommand;
             char[] CharCommandArray = new char[command.Length];
             CharCommandArray = command.ToCharArray();
-            CommandNumber = Convert.ToInt32(CharCommandArray[1].ToString());
+            try
+            {
+                CommandNumber = Convert.ToInt32(CharCommandArray[1].ToString());
+            }
+            catch
+            {
+                MessageBox.Show("Неправильная комманда");
+            }
             var tuple_parse0 = (0, set_parameters, color0);
             if (ValidCharsFound(command) == true)
             {
@@ -42,8 +50,8 @@ namespace UDP_server
                         {
                             if (color_num < 0 || color_num > 255)
                             {
-                                //Console.WriteLine("Ошибка!Номер цвета должен находиться в диапазоне от 0 до 255");
-                               return tuple_parse0;
+                                MessageBox.Show("Неправильная комманда с цветом");
+                                return tuple_parse0;
                             }
                         }
                     }
@@ -68,7 +76,7 @@ namespace UDP_server
                         {
                             if (parameter < 0 || parameter > 900)
                             {
-                                //Console.WriteLine("Ошибка!Параметры должны находиться в диапазоне от 0 до 255");
+                                MessageBox.Show("Неправильная комманда с параметрами");
                                 return tuple_parse0;
                             }
                         }
@@ -76,7 +84,7 @@ namespace UDP_server
                         {
                             if (color_num < 0 || color_num > 255)
                             {
-                                //Console.WriteLine("Ошибка!Номер цвета должен находиться в диапазоне от 0 до 255");
+                                MessageBox.Show("Ошибка!Номер цвета должен находиться в диапазоне от 0 до 255");
                                return tuple_parse0;
                             }
                         }
@@ -102,7 +110,7 @@ namespace UDP_server
                         {
                             if (parameter < 0 || parameter > 900)
                             {
-                                //Console.WriteLine("Ошибка!Параметры должны находиться в диапазоне от 0 до 255");
+                                
                                 return tuple_parse0;
                             }
                         }
@@ -110,7 +118,7 @@ namespace UDP_server
                         {
                             if (color_num < 0 || color_num > 255)
                             {
-                                // Console.WriteLine("Ошибка!Номер цвета должен находиться в диапазоне от 0 до 255");
+                                MessageBox.Show("Ошибка!Номер цвета должен находиться в диапазоне от 0 до 255");
                                 return tuple_parse0;
                             }
                         }
@@ -135,7 +143,7 @@ namespace UDP_server
                         {
                             if (parameter < 0 || parameter > 900)
                             {
-                                //Console.WriteLine("Ошибка!Параметры должны находиться в диапазоне от 0 до 255");
+                               
                                 return tuple_parse0;
                             }
                         }
@@ -148,7 +156,7 @@ namespace UDP_server
                         {
                             if (color_num < 0 || color_num > 255)
                             {
-                                // Console.WriteLine("Ошибка!Номер цвета должен находиться в диапазоне от 0 до 255");
+                                    MessageBox.Show("Ошибка!Номер цвета должен находиться в диапазоне от 0 до 255");
                                 return tuple_parse0;
                             }
                         }
@@ -158,13 +166,13 @@ namespace UDP_server
                 }
                 else
                 {
-                    //Console.WriteLine("Ошибка! Введены неправильные символы начала/конца команды!");
+                    MessageBox.Show("Ошибка! Введены неправильные символы начала/конца команды!");
                    return tuple_parse0;
                 }
             }
             else
             {
-                //Console.WriteLine("Ошибка! Введены недопустимые символы в команде!");
+                MessageBox.Show("Ошибка! Введены недопустимые символы в команде!");
                 return tuple_parse0;
             }
         }

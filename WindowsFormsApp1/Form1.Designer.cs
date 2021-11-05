@@ -39,13 +39,13 @@
             this.pictureBox1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.pictureBox1.Location = new System.Drawing.Point(64, 53);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(900, 547);
+            this.pictureBox1.Size = new System.Drawing.Size(535, 291);
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(278, 12);
+            this.button1.Location = new System.Drawing.Point(64, 12);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(219, 35);
             this.button1.TabIndex = 9;
@@ -55,7 +55,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(525, 12);
+            this.textBox1.Location = new System.Drawing.Point(289, 21);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(310, 26);
             this.textBox1.TabIndex = 10;
@@ -65,7 +65,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.ClientSize = new System.Drawing.Size(1030, 737);
+            this.ClientSize = new System.Drawing.Size(670, 380);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox1);
