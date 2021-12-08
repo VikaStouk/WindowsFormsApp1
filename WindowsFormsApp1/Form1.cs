@@ -20,9 +20,7 @@ namespace WindowsFormsApp1
             rec = new Thread(new ThreadStart(Receive));
             rec.Start();
 
-            timer1.Interval = 1000;
-            timer1.Tick += new EventHandler(timer1_Tick);
-            timer1.Start();
+           
         }
 
 
@@ -85,11 +83,7 @@ namespace WindowsFormsApp1
             var graphics = Graphics.FromImage(bitmap);
             Font drawFont = new Font("Arial", tupleString.parameters[2]);
             SolidBrush drawBrush = new SolidBrush(Color.FromArgb(tupleString.color[0], tupleString.color[1], tupleString.color[2]));
-            if (letter == 'T')
-            {
-                label1.Visible = true;
-                label1.ForeColor = Color.FromArgb(tupleString.color[0], tupleString.color[1], tupleString.color[2]);
-            }
+           
             graphics.DrawString(Convert.ToString(letter), drawFont, drawBrush, tupleString.parameters[0], tupleString.parameters[1]);
             return bitmap;
         }
@@ -193,46 +187,6 @@ namespace WindowsFormsApp1
             Application.Exit();
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            int h = DateTime.Now.Hour;
-            int m = DateTime.Now.Minute;
-            int s = DateTime.Now.Second;
-
-            string time = "";
-
-            if (h < 10)
-            {
-                time += "0" + h;
-            }
-            else
-            {
-                time += h;
-            }
-
-            time += ":";
-
-            if (m < 10)
-            {
-                time += "0" + m;
-            }
-            else
-            {
-                time += m;
-            }
-
-            time += ":";
-
-            if (s < 10)
-            {
-                time += "0" + s;
-            }
-            else
-            {
-                time += s;
-            }
-
-            label1.Text = time;
-        }
+        
     }
 }
